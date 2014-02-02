@@ -1,12 +1,4 @@
 <?php
-/**
- * Site helper
- *
- * @package    comgroup
- * @subpackage lib.helper
- * @author     Daniel Korsak <daniel.korsak@wp.pl>
- * @version    SVN: $Id$
- */
 
 /**
  * Truncate post body - get first $count elements
@@ -193,6 +185,7 @@ function mail_to_encode($address, $name = '', $params = array())
     }
     return mailto_encode($name, $address, 'javascript', $params);
 }
+
 function include_metas_no_title()
 {
     $context = sfContext::getInstance();

@@ -1,14 +1,7 @@
 <?php
-/**
- * Utils class. Some methods
- *
- * @package    comgroup
- * @subpackage lib
- * @author     Daniel Korsak <daniel.korsak@wp.pl>
- * @version    SVN: $Id$
- */
-class Utils {
-	
+
+class Utils
+{
   /**
    * This function create stripped title from string parameter.
    * Replace all Polish characters

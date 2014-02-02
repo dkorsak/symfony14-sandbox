@@ -1,15 +1,5 @@
 <?php
 
-/**
- * dkWidgetFormFCKeditor 
- *
- * Require installed ckeditor
- *
- * @package    comgroup
- * @subpackage lib.widget
- * @author     Daniel Korsak <daniel.korsak@wp.pl>
- * @version    SVN: $Id$
- */
 class dkWidgetFormFCKeditor extends sfWidgetFormTextarea
 {
     /**

@@ -1,5 +1,0 @@
-sfPropel15Plugin/lib/vendor/propel-generator/lib/builder/om/PHP5PeerBuilder.php
-
-Add at line 3
-/** A class that can be returned by this peer. */
-const CLASS_DEFAULT = '".$this->getStubObjectBuilder()->getClasspath()."';

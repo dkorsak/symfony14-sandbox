@@ -1,13 +1,5 @@
 <?php
 
-/**
- * Article form.
- *
- * @package    comgroup
- * @subpackage form
- * @author     Daniel Korsak <daniel.korsak@wp.pl>
- * @version    SVN: $Id$
- */
 class ArticleForm extends BaseArticleForm
 {
   

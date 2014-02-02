@@ -1,15 +1,5 @@
 <?php
 
-/**
- * dkWidgetFormJQueryDate represents a date widget rendered by JQuery UI.
- *
- * This widget needs JQuery and JQuery UI to work.
- *
- * @package    lib.widget
- * @subpackage widget
- * @author     Daniel Korsak <daniel.korsak@wp.pl>
- * @version    SVN: $Id$
- */
 class dkWidgetFormJQueryDate extends sfWidgetFormDate
 {
     /**
