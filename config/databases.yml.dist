@@ -31,9 +31,9 @@ all:
     class:        sfPropelDatabase
     param:
       classname:  PropelPDO
-      dsn:        mysql:dbname=comgroup_cms_14;host=localhost
-      username:   root
-      password:   Panties69
+      dsn:        mysql:dbname=DB_NAME;host=localhost
+      username:   DB_USER
+      password:   DB_PASSWORD
       encoding:   utf8
       persistent: true
       pooling:    true
