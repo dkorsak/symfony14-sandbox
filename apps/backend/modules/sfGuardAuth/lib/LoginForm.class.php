@@ -1,12 +1,5 @@
 <?php
 
-/**
- *
- * @package    sfGuardAuth
- * @subpackage sfGuardAuth.lib
- * @author     Daniel Korsak <daniel.korsak@wp.pl>
- * @version    SVN: $Id$
- */
 class LoginForm extends sfForm
 {
     public function configure()

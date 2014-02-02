@@ -3,14 +3,6 @@
 require_once dirname(__FILE__).'/../lib/categoryGeneratorConfiguration.class.php';
 require_once dirname(__FILE__).'/../lib/categoryGeneratorHelper.class.php';
 
-/**
- * category actions.
- *
- * @package    comgroup
- * @subpackage category
- * @author     Daniel Korsak <daniel.korsak@wp.pl>
- * @version    SVN: $Id$
- */
 class categoryActions extends autoCategoryActions
 {
     public function preExecute()

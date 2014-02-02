@@ -1,21 +1,13 @@
 <?php
 
-/**
- * navigation module configuration.
- *
- * @package    comgroup
- * @subpackage navigation
- * @author     Daniel Korsak <daniel.korsak@wp.pl>
- * @version    SVN: $Id: configuration.php 12474 2008-10-31 10:41:27Z fabien $
- */
 class navigationGeneratorConfiguration extends BaseNavigationGeneratorConfiguration
 {
-  public function getFieldsDefault()
-  {
-    $res = parent::getFieldsDefault();
-    $res['url']['is_real'] = false;
-    $res['display']['is_real'] = false;
+    public function getFieldsDefault()
+    {
+        $res = parent::getFieldsDefault();
+        $res['url']['is_real'] = false;
+        $res['display']['is_real'] = false;
     
-    return $res;
-  }
+        return $res;
+    }
 }

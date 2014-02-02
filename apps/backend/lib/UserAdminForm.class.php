@@ -1,7 +1,6 @@
 <?php
 class UserAdminForm extends sfGuardUserAdminForm
 {
-  
     public function configure()
     {
         unset(

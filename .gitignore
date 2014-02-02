@@ -8,3 +8,8 @@ composer.phar
 /log/*.log
 plugins/sfPropelORMPlugin
 /config/databases.yml
+phing
+propel-gen
+propel-gen.bat
+symfony
+web/*Plugin

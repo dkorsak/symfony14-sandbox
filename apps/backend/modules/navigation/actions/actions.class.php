@@ -3,14 +3,6 @@
 require_once dirname(__FILE__).'/../lib/navigationGeneratorConfiguration.class.php';
 require_once dirname(__FILE__).'/../lib/navigationGeneratorHelper.class.php';
 
-/**
- * navigation actions.
- *
- * @package    comgroup
- * @subpackage navigation
- * @author     Daniel Korsak <daniel.korsak@wp.pl>
- * @version    SVN: $Id$
- */
 class navigationActions extends autoNavigationActions
 {
     public function preExecute()

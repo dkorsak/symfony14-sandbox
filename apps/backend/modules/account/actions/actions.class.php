@@ -9,7 +9,6 @@ require_once dirname(__FILE__).'/../lib/accountGeneratorHelper.class.php';
  * @package    comgroup
  * @subpackage account
  * @author     Daniel Korsak <daniel.korsak@wp.pl>
- * @version    SVN: $Id$
  */
 class accountActions extends autoAccountActions
 {
