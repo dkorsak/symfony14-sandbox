@@ -6,5 +6,4 @@ composer.phar
 /cache/backend
 /cache/*.cache
 /log/*.log
-symfony
 plugins/sfPropelORMPlugin

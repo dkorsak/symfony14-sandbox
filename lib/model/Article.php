@@ -20,9 +20,4 @@ require 'lib/model/om/BaseArticle.php';
  */
 class Article extends BaseArticle 
 {
-
-    public function shouldIndex()
-    {
-        return $this->getDisplay();
-    }
 } // Article

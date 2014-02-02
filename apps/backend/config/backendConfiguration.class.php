@@ -6,6 +6,6 @@ class backendConfiguration extends sfApplicationConfiguration
     {
         sfValidatorBase::setDefaultMessage('required', 'To pole jest wymagane');
         sfValidatorBase::setDefaultMessage('invalid', 'Nieprawidłowa wartość');
-        sfConfig::set('application_name', 'Comgroup <span>CMS</span>');
+        sfConfig::set('application_name', 'Symfony 1.4 <span>Sandbox</span>');
     }
 }

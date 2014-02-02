@@ -18,8 +18,4 @@ require 'lib/model/om/BaseArticlePeer.php';
 class ArticlePeer extends BaseArticlePeer 
 {
     
-} // ArticlePeer
-// lucene searcher
-if (sfContext::hasInstance()) {
-    sfLucenePropelBehavior::getInitializer()->setup('Article');
 }

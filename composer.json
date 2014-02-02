@@ -4,11 +4,11 @@
     "require": {
         "php": ">=5.3.3",
         "lexpress/symfony1": "dev-master",
-        "propel/sf-propel-o-r-m-plugin": "dev-master",
-        "zendframework/zendframework1": "dev-master"
+        "propel/sf-propel-o-r-m-plugin": "dev-master"
     },
     "config": {
         "bin-dir": ".",
+    "process-timeout": 600,
         "vendor-dir": "lib/vendor"
     },
     "minimum-stability": "dev"

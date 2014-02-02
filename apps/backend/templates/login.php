@@ -12,7 +12,7 @@
 <body>
 <div id="main">
     <div id="top">
-        <div id="header"><?php echo link_to(image_tag('/images/admin/logo.jpg','alt="Comgroup" width="98" height="79"'), '@sf_guard_signin') ?>
+        <div id="header"><?php //echo link_to(image_tag('/images/admin/logo.jpg','alt="Comgroup" width="98" height="79"'), '@sf_guard_signin') ?>
             <p><?php echo sfConfig::get('application_name')?></p><div class="clear"></div>
         </div>
     </div>
