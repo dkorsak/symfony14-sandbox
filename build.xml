@@ -6,16 +6,16 @@
     <target name="download_composer" description="Download composer">
         <if>
             <not>
-                <available file="${project.basedir}/cms/composer.phar"/>
+                <available file="${project.basedir}/composer.phar"/>
             </not>
             <then>
                 <echo>PHING DEBUG: Downloading composer</echo>
-                <exec executable="curl" dir="cms" output="${project.basedir}/cms/composer.php"><arg line="-s https://getcomposer.org/installer"/></exec>
-                <exec executable="php" dir="cms"><arg line="composer.php"/></exec>
-                <delete file="${project.basedir}/cms/composer.php"/>
+                <exec executable="curl" output="${project.basedir}/composer.php"><arg line="-s https://getcomposer.org/installer"/></exec>
+                <exec executable="php" ><arg line="composer.php"/></exec>
+                <delete file="${project.basedir}/composer.php"/>
             </then>
             <else>
-                <exec executable="php" dir="cms"><arg line="composer.phar self-update"/></exec>
+                <exec executable="php"><arg line="composer.phar self-update"/></exec>
             </else>
         </if>
     </target>
@@ -35,12 +35,12 @@
     
     <target name="composer" depends="download_composer" description="Install packages from composer.lock file">
         <echo>PHING DEBUG: Installing dependencies from composer.lock file</echo>
-        <exec passthru="true" executable="php" dir="cms"><arg line="composer.phar install  --optimize-autoloader"/></exec>
+        <exec passthru="true" executable="php"><arg line="composer.phar install  --optimize-autoloader"/></exec>
     </target>
 
     <target name="composerupdate" depends="download_composer" description="Update vendor directory to latest packages version">
         <echo>PHING DEBUG: Updating vendor</echo>
-        <exec passthru="true" executable="php" dir="cms"><arg line="composer.phar update  --optimize-autoloader"/></exec>
+        <exec passthru="true" executable="php"><arg line="composer.phar update  --optimize-autoloader"/></exec>
     </target>
 
 </project>
