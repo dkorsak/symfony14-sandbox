@@ -1,0 +1,39 @@
+sfGuardUser:
+  sfGuardUser_1:
+    username:          admin@admin.com
+    password:          admin
+    is_super_admin:    true
+
+sfGuardUserProfile:
+  sfGuardUserProfile_1:
+    user_id:            sfGuardUser_1
+    first_name:         Jan
+    surname:            Kowalski
+    
+sfGuardPermission:
+  admin:
+    name:           "<?php echo sfConfig::get('role_admin') ?>" 
+    description:    "<?php echo sfConfig::get('role_admin') ?>"
+  moderator:
+    name:           "<?php echo sfConfig::get('role_moderator') ?>"
+    description:    "<?php echo sfConfig::get('role_moderator') ?>"
+    
+sfGuardGroup:
+  admin:
+    name:           admin
+    description:    Administrator
+
+sfGuardGroupPermission:
+  admin:
+    group_id:       admin
+    permission_id:  admin
+
+sfGuardUserGroup:
+  admin:
+    group_id:       admin
+    user_id:        sfGuardUser_1
+    
+sfGuardUserPermission:
+  sfGuardUserPermission_1:
+    user_id:        sfGuardUser_1
+    permission_id:  admin

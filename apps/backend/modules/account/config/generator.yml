@@ -1,0 +1,35 @@
+generator:
+  class: sfPropelGenerator
+  param:
+    model_class:           sfGuardUser
+    theme:                 admin
+    non_verbose_templates: true
+    with_show:             false
+    singular:              sfGuardUser
+    plural:                sfGuardUsers
+    route_prefix:          account
+    with_propel_route:     1
+    actions_base_class:    sfActions
+
+    config:
+      actions: ~
+      fields:  ~
+      list:    ~
+      filter:  ~
+      form:
+        class: AccountAdminForm
+        display:
+          "Moje dane": [first_name, surname]
+          "Logowanie":      [username, password, password_again]
+        fields:
+          first_name:        {label: "Imię:", attributes: {size: 40}}
+          surname:           {label: "Nazwisko:", attributes: {size: 40}}
+          username:          {label: "E-mail:", attributes: {size: 40}}
+          password:          {label: "Hasło:"}
+          password_again:    {label: "Powtórz hasło:"}
+          is_active:         {label: "Aktywny:", help: "Jeżeli opcja jest zaznaczona, to użytkownik może się logować"}
+
+      edit:
+        title: Moje konto
+        actions:
+          _save: ~

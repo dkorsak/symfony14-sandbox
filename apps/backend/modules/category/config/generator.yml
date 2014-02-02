@@ -1,0 +1,54 @@
+generator:
+  class: sfPropelGenerator
+  param:
+    model_class:           Category
+    theme:                 admin15
+    non_verbose_templates: true
+    with_show:             false
+    singular:              Category
+    plural:                Categorys
+    route_prefix:          category
+    with_propel_route:     1
+    actions_base_class:    sfActions
+
+    config:
+      actions: ~
+      fields:
+        spaces_category_name:  { label: "Nazwa kategorii" }
+        list_category_name:    { label: "Nazwa kategorii" }
+        position:              { label: "Kolejność" }
+      list:
+        title: Kategorie
+        display: [=list_category_name, _position]
+        object_actions:
+          _delete: {label: "Usuń", confirm: "Czy jesteś pewien?"}
+        batch_actions: []  
+        
+        actions:
+          _new: {label: "Dodaj nową kategorię"}
+        
+        max_per_page: 0
+        
+        query_methods: [doSelectTree]
+        
+      filter:
+        class: false
+      form:
+        display: 
+          "Szczegóły": [parent_tree_id, name]
+        fields:
+          name:        { label: "Nazwa:", attributes: {size: 80} }
+          parent_tree_id: { label: "Podkategoria:" }
+        
+      edit:
+        title: Edycja kategorii
+        actions:
+          _list: {label: "Powrót"}
+          _save: ~        
+
+      new:
+        title: Dodawanie nowej kategorii
+        actions:
+          _list: {label: "Powrót"}
+          _save: ~
+          _save_and_add: ~

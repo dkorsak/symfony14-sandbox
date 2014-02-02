@@ -1,0 +1,55 @@
+generator:
+  class: sfPropelGenerator
+  param:
+    model_class:           Article
+    theme:                 admin15
+    non_verbose_templates: true
+    with_show:             false
+    singular:              Article
+    plural:                Articles
+    route_prefix:          article
+    with_propel_route:     1
+    actions_base_class:    sfActions
+
+    config:
+      actions: ~
+      fields:
+        title: {label: "Tytuł"}
+        created_at: {label: "Data utworzenia", date_format: dd.MM.yyyy}
+        display:    {label: "Opublikowany"}
+      list:
+        title: Lista artykułów
+        display: [=title, created_at, display]
+        object_actions: []
+        actions:
+          _new: {label: "Dodaj nowy artykuł"}
+        sort: [created_at, desc]
+        
+        
+      filter:
+        class: false
+      form:
+        
+        fields:
+          title: {label: "Tytuł:", attributes: {size: 80}}
+          body:  {label: "Treść:"}
+          created_at: {label: "Data publikacji:", help: "Jeżeli pole nie zostanie wypełnione, to wstawiona zostanie dzisiejsza data"}
+          display: {label: "Opublikuj:"}
+          slug:    {label: "Slug:", attributes: {size: 80}}
+      edit:
+        title: Edycja artykułu
+        display:
+          "Dane artykułu": [title, body, display, created_at, slug]
+        actions:
+          _list: {label: "Powrót"}
+          _save: ~        
+
+      new:
+        title: Dodawanie nowego artykułu
+        display:
+          "Dane artykułu": [title, body, display, created_at]
+        actions:
+          _list: {label: "Powrót"}
+          _save: ~
+          _save_and_add: ~
+

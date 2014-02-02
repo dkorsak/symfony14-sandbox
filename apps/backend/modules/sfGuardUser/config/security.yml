@@ -1,0 +1,3 @@
+all:
+  is_secure: on
+  credentials: "<?php echo sfConfig::get('role_admin') ?>"

@@ -1,0 +1,15 @@
+{
+    "name": "Symfony 1.4 sandbox",
+    "description": "Symfony 1.4 sandbox",
+    "require": {
+        "php": ">=5.3.3",
+        "lexpress/symfony1": "dev-master",
+        "propel/sf-propel-o-r-m-plugin": "dev-master",
+        "zendframework/zendframework1": "dev-master"
+    },
+    "config": {
+        "bin-dir": ".",
+        "vendor-dir": "lib/vendor"
+    },
+    "minimum-stability": "dev"
+}

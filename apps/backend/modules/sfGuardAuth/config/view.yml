@@ -1,0 +1,5 @@
+default:
+  layout:         login
+  
+secureSuccess:
+  layout:         layout

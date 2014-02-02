@@ -1,0 +1,38 @@
+generator:
+  class: sfPropelGenerator
+  param:
+    model_class:           StaticPage
+    theme:                 admin15
+    non_verbose_templates: true
+    with_show:             false
+    singular:              StaticPage
+    plural:                StaticPages
+    route_prefix:          static_page
+    with_propel_route:     1
+    actions_base_class:    sfActions
+
+    config:
+      actions: ~
+      fields:
+        name: {label: "Nazwa"}
+      list:
+        title: Lista stron statycznych
+        display: [=name]
+        object_actions: []
+        batch_actions: []
+        actions: []
+        max_per_page: 0
+      filter:
+        class: false
+      form:
+        display:
+          "Szczegóły": [body]
+        actions:
+          _list: {label: "Powrót"}
+          _save: ~
+        fields:
+          body: {label: "Treść:"}    
+      edit:
+        title: Edycja strony statycznej "%%name%%"
+      new:     ~
+

@@ -1,0 +1,10 @@
+/lib/vendor
+composer.phar
+.project
+.settings
+/cache/frontend
+/cache/backend
+/cache/*.cache
+/log/*.log
+symfony
+plugins/sfPropelORMPlugin

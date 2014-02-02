@@ -1,0 +1,35 @@
+generator:
+  class: sfPropelGenerator
+  param:
+    model_class:           SiteConfig
+    theme:                 admin15
+    non_verbose_templates: true
+    with_show:             false
+    singular:              SiteConfig
+    plural:                SiteConfigs
+    route_prefix:          site_config
+    with_propel_route:     1
+    actions_base_class:    sfActions
+
+    config:
+      actions: ~
+      fields:  ~
+      list:    ~
+      filter:  ~
+      form:
+        display:
+          "Dane kontaktowe":  [contact_email]
+          "Meta Tagi Globalne - ustawiane, gdy strona nie posiada własnych meta tagów":        [meta_title, meta_description, meta_keys]
+              
+          
+        fields:
+          contact_email:             {label: "E-mail kontaktowy:", attributes: {size: 60}, help: "Główny e-mail kontaktowy"}
+          meta_title:                { label: "Tytuł:", attributes: {size: 80} } 
+          meta_description:          { label: "Opis:" attributes: {rows: 4, cols: 80}}
+          meta_keys:                 { label: "Słowa kluczowe:" attributes: {rows: 4, cols: 80}}
+           
+      edit:
+        title: Konfiguracja parametrów witryny
+        actions:
+          _save: ~
+      new:     ~

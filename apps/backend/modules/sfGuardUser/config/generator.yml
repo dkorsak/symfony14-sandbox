@@ -1,0 +1,61 @@
+generator:
+  class: sfPropelGenerator
+  param:
+    model_class:           sfGuardUser
+    theme:                 admin15
+    non_verbose_templates: true
+    with_show:             false
+    singular:              ~
+    plural:                ~
+    route_prefix:          sf_guard_user
+    with_propel_route:     1
+
+    config:
+      fields:
+        password_again: { label: "Powtórz hasło" }
+        password:       { label: "Hasło"}
+        username:       {label: "E-mail"}
+        first_name:     {label: "Imię"}
+        surname:        {label: "Nazwisko"}
+        last_login:     {label: "Ostatnio zalogowany"}
+        is_active:      {label: "Aktywny"}
+
+      list:
+        title:   Lista użytkowników
+        display: [=username, first_name, surname, is_active, last_login]
+        object_actions: []
+        actions:
+          _new: {label: "Dodaj nowego użytkownika"}
+      filter: 
+        #class: false
+        display: [username]
+        fields:
+          username: {label: "E-mail:", attributes: {size: 40}}
+      
+      form:
+        class: UserAdminForm
+        display:
+          "Dane personane": [first_name, surname]
+          "Logowanie":      [username, password, password_again]
+          "Uprawnienia":    [is_active, sf_guard_user_permission_list]
+        fields:
+          first_name:        {label: "Imię:", attributes: {size: 40}}
+          surname:           {label: "Nazwisko:", attributes: {size: 40}}
+          username:          {label: "E-mail:", attributes: {size: 40}}
+          password:          {label: "Hasło:"}
+          password_again:    {label: "Powtórz hasło:"}
+          is_active:         {label: "Aktywny:", help: "Jeżeli opcja jest zaznaczona, to użytkownik może się logować"}
+          sf_guard_user_permission_list: {label: "Rola:"}
+
+      edit:
+        title: Edycja danych użytkownika
+        actions:
+          _list: {label: "Powrót"}
+          _save: ~        
+
+      new:
+        title: Dodawanie nowego użytkownika
+        actions:
+          _list: {label: "Powrót"}
+          _save: ~
+          _save_and_add: ~

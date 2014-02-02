@@ -1,0 +1,21 @@
+SampleIndex:
+  index:
+    encoding: UTF-8
+    stop_words: [an, it](the,)
+    short_words: 2
+    analyzer: utf8num
+    case_sensitive: false
+    mb_string: on
+    cultures: [pl_PL]
+    
+  
+  models:
+    Article:
+      fields:
+        id: unindexed
+        title: text
+        body: 
+          type: text
+          transform: strip_tags
+      validator: shouldIndex
+      validator_params: ~

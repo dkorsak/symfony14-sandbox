@@ -1,0 +1,87 @@
+site_config:
+  class: sfPropelORMRouteCollection
+  options:
+    model:                SiteConfig
+    module:               site_config
+    prefix_path:          /site_config
+    column:               id
+    with_wildcard_routes: true
+
+navigation:
+  class: sfPropelORMRouteCollection
+  options:
+    model:                Navigation
+    module:               navigation
+    prefix_path:          /navigation
+    column:               id
+    with_wildcard_routes: true
+
+static_page:
+  class: sfPropelORMRouteCollection
+  options:
+    model:                StaticPage
+    module:               static_page
+    prefix_path:          /static_page
+    column:               id
+    with_wildcard_routes: true
+
+category:
+  class: sfPropelORMRouteCollection
+  options:
+    model:                Category
+    module:               category
+    prefix_path:          /category
+    column:               id
+    with_wildcard_routes: true
+
+account:
+  class: sfPropelORMRouteCollection
+  options:
+    model:                sfGuardUser
+    module:               account
+    prefix_path:          /account
+    column:               id
+    with_wildcard_routes: true
+
+article:
+  class: sfPropelORMRouteCollection
+  options:
+    model:                Article
+    module:               article
+    prefix_path:          /article
+    column:               id
+    with_wildcard_routes: true
+
+move_news_category_down:
+  url:   /move_news_category_down/:category_id
+  param: { module: category, action: moveDown }
+
+  
+move_news_category_up:
+  url:   /move_news_category_up/:category_id
+  param: { module: category, action: moveUp }
+
+move_navigation_up:
+  url:   /navigacja/przesun-do-gory/:id
+  param: { module: navigation, action: moveUp }
+  
+move_navigation_down:
+  url:   /navigacja/przesun-do-dolu/:id
+  param: { module: navigation, action: moveDown }  
+
+# You can find more information about this file on the symfony website:
+# http://www.symfony-project.org/reference/1_4/en/10-Routing
+
+# default rules
+homepage:
+  url:   /
+  param: { module: homepage, action: index }
+
+# generic rules
+# please, remove them by adding more specific rules
+default_index:
+  url:   /:module
+  param: { action: index }
+
+default:
+  url:   /:module/:action/*

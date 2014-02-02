@@ -1,0 +1,43 @@
+prod:
+  .settings:
+    no_script_name:         true
+    logging_enabled:        false
+
+dev:
+  .settings:
+    error_reporting:        <?php echo (E_ALL | E_STRICT)."\n" ?>
+    web_debug:              true
+    cache:                  false
+    no_script_name:         false
+    etag:                   false
+
+test:
+  .settings:
+    error_reporting:        <?php echo ((E_ALL | E_STRICT) ^ E_NOTICE)."\n" ?>
+    cache:                  false
+    web_debug:              false
+    no_script_name:         false
+    etag:                   false
+
+all:
+  .settings:
+    # Form security secret (CSRF protection)
+    csrf_secret:            d135073c0cff9062fd17b56c89310a8b2602f0ee
+
+    # Output escaping settings
+    escaping_strategy:      true
+    escaping_method:        ESC_SPECIALCHARS
+
+    # Cache settings
+    lazy_cache_key:         true
+
+    # Enable the database manager
+    use_database:           true
+    
+    standard_helpers:       [Partial, Cache, I18N, Site]
+    default_culture:        pl_PL        # Default user culture    
+    i18n:                   off
+  .actions:
+    error_404_module:       homepage
+    error_404_action:       error404
+  

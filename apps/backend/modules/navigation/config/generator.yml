@@ -1,0 +1,66 @@
+generator:
+  class: sfPropelGenerator
+  param:
+    model_class:           Navigation
+    theme:                 admin15
+    non_verbose_templates: true
+    with_show:             false
+    singular:              Navigation
+    plural:                Navigations
+    route_prefix:          navigation
+    with_propel_route:     1
+    actions_base_class:    sfActions
+
+    config:
+      actions: ~
+      fields:
+        fields:
+        spaces_category_name:  { label: "Nazwa strony" }
+        list_category_name:    { label: "Nazwa strony" }
+        position:              { label: "Kolejność" }
+        url:                   { label: "Link" }
+        display:               { label: "Opublikuj"}
+      list:
+        title: Nawigacja
+        display: [=list_category_name, url, _position, display]
+        max_per_page: 0
+        
+        object_actions:
+          _delete: {label: "Usuń", confirm: "Czy jesteś pewnien?"}
+        batch_actions: []  
+        
+        actions:
+          _new: {label: "Dodaj nawigację"}
+        
+        max_per_page: 0
+        
+        query_methods: [doSelectTree]
+        
+        
+      filter:
+        class: false
+      form:
+        display: 
+          "Szczegóły":        [parent_tree_id, name, url, display]
+          "Meta Tagi":        [meta_title, meta_description, meta_keys]
+        fields:
+          name:             { label: "Nazwa:", attributes: {size: 80} }
+          parent_tree_id:   { label: "Podkategoria:" }
+          url:              { label: "URL:", help: "URL musi być unikalny oraz zaczynać się od znaku '/'. Dozwolone znaki: [a-z][A-Z]_-/", attributes: {size: 60}}
+          meta_title:       { label: "Tytuł:", attributes: {size: 80} } 
+          meta_description: { label: "Opis:" attributes: {rows: 4, cols: 80}}
+          meta_keys:        { label: "Słowa kluczowe:" attributes: {rows: 4, cols: 80}}
+          display:          { label: "Opublikuj:"}
+        
+      edit:
+        title: Edycja nawigacji
+        actions:
+          _list: {label: "Powrót"}
+          _save: ~        
+
+      new:
+        title: Dodawanie nowej nawigacji
+        actions:
+          _list: {label: "Powrót"}
+          _save: ~
+          _save_and_add: ~

@@ -1,0 +1,104 @@
+propel:
+  sf_guard_user_profile:
+    _attributes:    { phpName: sfGuardUserProfile }
+    id:             ~
+    user_id:        { type: Integer, foreignTable: sf_guard_user, foreignReference: id, onDelete: cascade}
+    first_name:     { type: varchar, size: 50, required: true}
+    surname:        { type: varchar, size: 50, required: true}
+    
+  articles:
+    _attributes:    { phpName: Article }
+    id:             ~
+    title:          { type: varchar, size: 255, required: true}
+    body:           { type: longvarchar, required: true}
+    display:        { type: boolean, default: 1, required: true}
+    slug:           { type: varchar, size: 255, required: true, index: true }
+    _propel_behaviors:
+      timestampable: ~
+      sluggable:
+        slug_column:      slug
+        slug_pattern:     "{Title}"
+        replace_pattern:  "/[^\\pL\\d]+/u"
+        replacement:      "-"
+        separator:        "-"
+        permanent:        true
+
+  categories:
+    _attributes:    { phpName: Category }
+    id:             ~
+    name:           { type: varchar, size: 255, required: true }
+    parent_tree_id: { type: integer, required: false, default: 0 }
+    category_level: { type: integer, required: false, default: 0 }
+    ltf:            { type: integer, required: false  }
+    rgt:            { type: integer, required: false  }
+    scope:          { type: integer, required: false  }
+    slug:           { type: varchar, size: 255, required: false, index: true }
+    _propel_behaviors:
+      timestampable: ~
+      sluggable:
+        slug_column:      slug
+        slug_pattern:     "{Name}"
+        replace_pattern:  "/[^\\pL\\d]+/u"
+        replacement:      "-"
+        separator:        "-"
+        permanent:        true
+      nested_set: 
+        left_column: ltf
+        right_column: rgt
+        level_column: category_level
+        use_scope: true
+        scope_column: scope
+        method_proxies: true
+      
+      symfony:
+        filter: false
+  
+  navigation:
+    _attributes:    { phpName: Navigation }
+    id:             ~
+    name:           { type: varchar, size: 255, required: true }
+    url:            { type: varchar, size: 255, required: true, index: unique }
+    route:          { type: varchar, size: 50, required: false, index: true }
+    parent_tree_id: { type: integer, required: false, default: 0 }
+    category_level: { type: integer, required: false, default: 0 }
+    ltf:            { type: integer, required: false  }
+    rgt:            { type: integer, required: false  }
+    scope:          { type: integer, required: false  }
+    display:        { type: boolean, default: 1, required: true}
+    meta_title:        { type: varchar, size: 255, required: false }
+    meta_description:  { type: longvarchar, required: false }
+    meta_keys:         { type: longvarchar, required: false }
+    _propel_behaviors:
+      timestampable: ~
+      nested_set: 
+        left_column: ltf
+        right_column: rgt
+        level_column: category_level
+        use_scope: true
+        scope_column: scope
+        method_proxies: true
+      symfony:
+        filter: false
+
+  static_pages:
+    _attributes:    { phpName: StaticPage }
+    id:             ~
+    name:              { type: varchar, size: 255, required: true }
+    identifier:        { type: varchar, size: 255, required: true, index: true }
+    body:              { type: longvarchar, required: false }
+    _propel_behaviors:
+      timestampable: ~
+      symfony:
+        filter: false
+        
+  
+  config:
+    _attributes:    { phpName: SiteConfig }
+    id:             ~
+    contact_email:      {type: varchar, size: 150, required: true, default: "daniel.korsK@wp.pl"}
+    meta_title:         { type: varchar, size: 255, required: false }
+    meta_description:   { type: longvarchar, required: false }
+    meta_keys:          { type: longvarchar, required: false }
+    _propel_behaviors:
+      symfony:
+        filter: false

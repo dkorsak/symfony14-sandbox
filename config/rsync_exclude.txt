@@ -1,0 +1,12 @@
+.svn
+.git
+.gitignore
+/web/uploads
+/cache/*
+/log/*
+/web/*_dev.php
+/config/*.*
+/.settings
+/.project
+/.cache
+nbproject
