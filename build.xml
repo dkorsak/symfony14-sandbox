@@ -43,4 +43,9 @@
         <exec passthru="true" executable="php"><arg line="composer.phar update  --optimize-autoloader"/></exec>
     </target>
 
+    <target name="db" description="Build database">
+        <echo>PHING DEBUG: Updating vendor</echo>
+        <exec passthru="true" executable="php"><arg line="./symfony propel:build-all-load --no-confirmation"/></exec>
+    </target>
+
 </project>

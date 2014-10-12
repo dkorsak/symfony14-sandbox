@@ -13,3 +13,4 @@ propel-gen
 propel-gen.bat
 symfony
 web/*Plugin
+.idea
